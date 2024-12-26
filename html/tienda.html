@@ -1,0 +1,118 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/styles.css">
+        <!-- ANIMATE CSS  -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+        <!-- AOS  -->
+        <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+        <title> EBAuto Motores</title>
+    </head>
+    <body>
+        <script>
+            // Verificar si el usuario ha iniciado sesión
+            if (!localStorage.getItem('loggedInUser')) {
+                alert('Debes iniciar sesión primero');
+                window.location.href = '../index.html';  // Redirige al inicio si no hay sesión activa
+            }
+        </script>
+
+        <header class="header">
+            
+                <div class="logo-responsive animate__animated animate__fadeInLeft"> EB Auto Motores</div>
+                <input type="checkbox" id="toggle">
+                <label for="toggle"><img class="menu" src="https://png.pngtree.com/png-vector/20220726/ourlarge/pngtree-icon-for-dark-mode-hamburgerstyled-menu-glyph-in-user-interface-vector-png-image_47717124.jpg" alt="menu"></label>
+            
+                <nav class="navigation">
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#">Nosotros</a></li>
+                        <li><a href="#productos">Productos</a></li>
+                        <li><a href="#contacto">Contacto</a>
+                    </ul>
+
+                </nav>
+
+        </header>
+
+    <div class="hero" id="inicio">
+    <!-- LOGO  -->
+        <main>
+            <div class="logo animate__animated animate__fadeIn">
+                <img src="../media/logodos.jpg" alt="logo">
+            </div>
+
+    <!-- IMG   -->
+    <div class="imagenes" id="productos">
+
+        <div class="post img1" >
+        <a href="" >
+            <img  style="width: 600px; height: 381px;" src="https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="vehiculo1">
+            <p>BMW Serie 3 2021 - Deportivo y Elegante Descubre el BMW Serie 3 2021, un sedán de lujo que combina un diseño impresionante con una potente motorización. Equipado con un motor turboalimentado, tracción trasera y una transmisión automática de 8 velocidades, este vehículo ofrece un manejo ágil y dinámico. Su interior cuenta con asientos de cuero, tecnología de última generación y un sistema de infoentretenimiento de pantalla táctil. Ideal para quienes buscan confort, elegancia y rendimiento sin comprometer el estilo.</p>
+        </a>
+        </div>
+
+        <div class="post img2">
+        <a href="">
+            <img  src="https://images.pexels.com/photos/207600/pexels-photo-207600.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="vehiculo2">
+            <p>BMW X5 2022 - SUV de Lujo La BMW X5 2022 es la combinación perfecta de potencia, comodidad y tecnología. Con un motor de 6 cilindros en línea y tracción total, esta SUV ofrece una conducción segura y estable en cualquier tipo de terreno. Su interior espacioso y refinado cuenta con asientos de cuero, pantalla táctil grande, y un sistema de sonido premium. Además, su diseño robusto y elegante la convierte en una opción ideal para aquellos que desean un SUV de lujo con un rendimiento excepcional.</p>
+        </a>
+        </div>
+
+        <div class="post img3">
+        <a href="" >
+            <img  src="https://images.pexels.com/photos/6729276/pexels-photo-6729276.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="vehiculo3">
+            <p>BMW M4 2023 - El Poder del Rendimiento Si lo que buscas es velocidad y adrenalina, el BMW M4 2023 es para ti. Con un motor de 6 cilindros biturbo y más de 500 caballos de fuerza, este deportivo te llevará a nuevas velocidades. Su diseño agresivo, junto con la suspensión deportiva y las llantas de alto rendimiento, hacen de este auto una máquina de emociones. En el interior, encontrarás una cabina de lujo con detalles en fibra de carbono y tecnología avanzada para una experiencia de conducción incomparable.</p>
+        </a>
+        </div>
+
+        <div class="post img4">
+        <a href="" >
+            <img  src="https://images.pexels.com/photos/2128805/pexels-photo-2128805.jpeg?auto=compress&cs=tinysrgb&w=600" alt="vehiculo4">
+            <p>BMW S1000RR 2022 - La Moto de Alto Rendimiento La BMW S1000RR 2022 es la moto perfecta para los amantes de la velocidad y la precisión. Equipado con un motor de 4 cilindros en línea que genera más de 200 caballos de fuerza, esta motocicleta está diseñada para ofrecer un rendimiento excepcional en las pistas y en la carretera. Su sistema de suspensión y frenos de última tecnología aseguran un control total en cualquier situación, mientras que su diseño aerodinámico y agresivo destaca en cada curva. Ideal para quienes buscan lo último en motos deportivas.</p>
+        </a>
+        </div>
+
+        <div class="post img5">
+        <a href="" >
+            <img  src="https://media.istockphoto.com/id/458534545/es/foto/bmw-motocicleta.jpg?s=612x612&w=0&k=20&c=dfKKNaATRfbOUSa6AFylvjb5Eo-qJuWCfIFRJCFEZwI=" alt="vehiculo5">
+            <p>BMW R1250GS 2022 - Aventura y Confort Para los que buscan explorar nuevos horizontes, la BMW R1250GS 2022 es la moto perfecta. Con un motor boxer de 1254 cc, esta moto está diseñada para conquistar cualquier tipo de terreno, desde carreteras pavimentadas hasta caminos de montaña. Su suspensión de alta gama y los sistemas de asistencia al conductor, como el control de tracción y el ABS Pro, brindan una experiencia de conducción segura y cómoda. Ideal para viajes largos y aventuras fuera de lo común.</p>
+        </a>
+        </div>
+
+        <div class="post img6">
+        <a href="" >
+            <img  style="width: 600px; height: 381px;" src= "https://phantom-expansion.unidadeditorial.es/cf53504c359ca0afb6c22104eeda60f2/resize/1200/f/webp/assets/multimedia/imagenes/2019/06/13/15604359488149.jpg" alt="vehiculo6">
+            <p>BMW F900R 2022 - Versatilidad y Estilo La BMW F900R 2022 es una motocicleta naked que ofrece la combinación perfecta de versatilidad y rendimiento. Su motor de 2 cilindros en línea de 895 cc proporciona una aceleración emocionante y un manejo ágil, mientras que su diseño moderno y estilizado atrae todas las miradas. Con un asiento cómodo, tecnología avanzada y una posición de conducción relajada, esta moto es ideal tanto para viajes largos como para recorridos urbanos diarios.</p>
+        </a>
+        </div>
+    </div>
+    </div>
+        </main>
+       
+            <footer class="footer" id="contacto">
+                <div class="footer-container">
+                    <div class="footer-logo">
+                        <img src="../media/logodos.jpg" alt="Logo">
+                        <p>&copy; 2024 EB Auto Motores. Todos los derechos reservados.</p>
+                    </div>
+                    <div class="footer-contact">
+                        <h3>Contacto</h3>
+                        <ul>
+                            <li>Email: <a href="mailto:info@ebauto.com">info@ebauto.com</a></li>
+                            <li>Teléfono: <a href="tel:+1234567890">+1 (234) 567-890</a></li>
+                            <li><a href="#">Facebook</a></li>
+                            <li><a href="#">Instagram</a></li>
+                            <li><a href="#">Twitter</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </footer>
+
+        
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        
+    </body>
+    </html>
