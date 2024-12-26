@@ -71,3 +71,43 @@ document.querySelector('form[action=""]').addEventListener('submit', function(ev
             alert(error);
         });
 });
+
+document.getElementById('registroForm').addEventListener('submit', function(event) {
+    event.preventDefault();  // Evita el comportamiento por defecto del formulario
+
+    const username = document.getElementById('username').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('confirmPassword').value;
+
+    if (password !== confirmPassword) {
+        alert('Las contraseñas no coinciden');
+        return;
+    }
+
+    registerUser(username, email, password)
+        .then(message => {
+            alert(message);  // Mensaje de éxito
+            window.location.href = '../index.html';  // Redirige al inicio de sesión después de registrar
+        })
+        .catch(error => {
+            alert(error);  // Mensaje de error
+        });
+});
+
+// Manejo del evento de inicio de sesión
+document.getElementById('loginForm').addEventListener('submit', function(event) {
+    event.preventDefault();  // Evita el comportamiento por defecto del formulario
+    
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+    
+    loginUser(username, password)
+        .then(message => {
+            alert(message);  // Mensaje de éxito
+            window.location.href = 'tienda.html';  // Redirige a la tienda
+        })
+        .catch(error => {
+            alert(error);  // Mensaje de error
+        });
+});
