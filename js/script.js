@@ -1,8 +1,18 @@
-// Obtenemos la base de datos de usuarios (en este caso localStorage)
-const usersDatabase = JSON.parse(localStorage.getItem('users')) || [];
+// Simulamos la obtención de los usuarios desde un archivo JSON utilizando fetch
+async function getUsersFromFile() {
+    try {
+        const response = await fetch('usuarios.json');  // Cargar datos desde el archivo JSON
+        const data = await response.json();
+        return data.users;  // Retorna los usuarios
+    } catch (error) {
+        console.error('Error al cargar los usuarios:', error);
+        return [];  // En caso de error, retornamos un array vacío
+    }
+}
 
 // Función para simular el inicio de sesión
-function loginUser(username, password) {
+async function loginUser(username, password) {
+    const usersDatabase = await getUsersFromFile();  // Obtener usuarios desde el archivo JSON
     return new Promise((resolve, reject) => {
         const user = usersDatabase.find(user => user.username === username && user.password === password);
         if (user) {
@@ -33,7 +43,8 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
 });
 
 // Función para registrar un usuario
-function registerUser(username, email, password) {
+async function registerUser(username, email, password) {
+    const usersDatabase = await getUsersFromFile();  // Obtener usuarios desde el archivo JSON
     return new Promise((resolve, reject) => {
         // Verificar si el nombre de usuario ya existe
         if (usersDatabase.some(user => user.username === username)) {
@@ -42,8 +53,20 @@ function registerUser(username, email, password) {
             // Agregar el nuevo usuario
             const newUser = { username, email, password };
             usersDatabase.push(newUser);
-            localStorage.setItem('users', JSON.stringify(usersDatabase)); // Guardamos los usuarios en el localStorage
-            resolve('Usuario registrado con éxito');
+            
+            // Guardamos los usuarios en el archivo JSON simulando con un POST (este paso solo es en el cliente)
+            fetch('usuarios.json', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ users: usersDatabase }),
+            })
+            .then(response => response.json())
+            .then(() => {
+                resolve('Usuario registrado con éxito');
+            })
+            .catch(() => reject('Hubo un problema al registrar el usuario'));
         }
     });
 }
